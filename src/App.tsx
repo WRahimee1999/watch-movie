@@ -1,28 +1,17 @@
-import { ReactNode } from 'react'
 import './App.css'
+import MovieCard, {Movie} from './components/MovieCard'
 
-type TextProps = {
-  display: string,
-  children?: ReactNode,
-}
 function App() {
-
+  const movie: Movie = {
+    title: 'Movie Name',
+    path: 'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg',
+    release_date: Date.now().toString(),
+  };
   return (
     <>
-      <Text display="Hello">
-        Hello From Child
-      </Text>
+      <MovieCard movie={movie} />
     </>
   )
-}
-
-function Text({ display,children }:TextProps) {
-  return (
-    <div>
-    <p>{display}</p>
-    <p>{children}</p>
-    </div>
-  );
 }
 
 export default App
