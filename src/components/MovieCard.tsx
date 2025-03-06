@@ -1,12 +1,13 @@
 export interface Movie {
+    id: number;
     title:string;
     path:string;
     release_date:string;
 }
-interface MovieCard {
+export interface MovieCardProps {
     movie:Movie;
 }
-export default function MovieCard({movie}: MovieCard) {
+export default function MovieCard({movie}: MovieCardProps) {
     const onFovorite = () => {
         alert('Favorites');
     }

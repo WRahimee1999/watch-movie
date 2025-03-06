@@ -1,15 +1,12 @@
-import './App.css'
-import MovieCard, {Movie} from './components/MovieCard'
+import './App.css';
+import Home from './Pages/Home';
 
 function App() {
-  const movie: Movie = {
-    title: 'Movie Name',
-    path: 'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg',
-    release_date: Date.now().toString(),
-  };
+  const move_count = 1;
   return (
     <>
-      <MovieCard movie={movie} />
+    {move_count >= 1 ? (<Home />) : ("No Movies")}
+    {/* {move_count >=1 && <MovieCard movie={movie} />} */}
     </>
   )
 }
