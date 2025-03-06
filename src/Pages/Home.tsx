@@ -1,4 +1,5 @@
-import { useState } from "react";
+import "../css/Home.css"
+import React, { useState } from "react";
 import MovieCard, { Movie } from "../components/MovieCard";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -8,8 +9,9 @@ export default function Home() {
     { id: 3, title: "Daban3", path: "url", release_date: Date.now.toString() },
     { id: 4, title: "Daban4", path: "url", release_date: Date.now.toString() },
   ];
-  const handleSearch = () => {
-    setSearchQuery("searching...");
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert(searchQuery);
   };
   return (
     <div className="home">
@@ -19,6 +21,7 @@ export default function Home() {
           placeholder="Search for movies..."
           className="search-input"
           value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button type="submit" className="search-button">
           Search
@@ -26,9 +29,12 @@ export default function Home() {
       </form>
 
       <div className="movie-grid">
-        {movies.map((movie) => (
-          <MovieCard movie={movie} key={movie.id} />
-        ))}
+        {movies.map(
+          (movie) =>
+            movie.title.toLowerCase().startsWith(searchQuery) && (
+              <MovieCard movie={movie} key={movie.id} />
+            )
+        )}
       </div>
     </div>
   );

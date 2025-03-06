@@ -1,3 +1,4 @@
+import "../css/MovieCard.css";
 export interface Movie {
     id: number;
     title:string;
@@ -21,7 +22,6 @@ export default function MovieCard({movie}: MovieCardProps) {
             </div>
             <div className="movie-info">
                 <h3>{movie.title}</h3>
-                <p>{movie.release_date}</p>
             </div>
         </div>
     );
