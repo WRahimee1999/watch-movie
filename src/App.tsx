@@ -1,11 +1,10 @@
 import "./App.css";
 import Home from "./Pages/Home";
 import Favorites from "./Pages/Favorites";
-import NavBar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const move_count = 1;
   return (
     <div>
       <NavBar /> 
