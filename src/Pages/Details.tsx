@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../Services/api";
-import { Movie } from "../components/MovieCard";
+import MovieDetailCard from "../components/DetailCard";
+import "../css/Details.css";
+import { Movie } from "../components/DetailCard";
 
 export default function MovieDetails() {
   const { id } = useParams<{ id: string }>();
-  const [movie, setMovie] = useState<Movie | null>(null);
+  const [movie, setMovie] = useState<Movie>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  
   useEffect(() => {
     if (!id) return;
 
     const loadMovieDetails = async (id: string) => {
       try {
-        setLoading(loading);
+        setLoading(true);
         const movieData = await getMovieDetails(id);
         setMovie(movieData);
       } catch (err) {
@@ -26,5 +29,16 @@ export default function MovieDetails() {
 
     loadMovieDetails(id);
   }, [id]);
-  return <div>Movie ID: {JSON.stringify(movie)}</div>;
+
+  if (loading) {
+    return <div className="loader">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
+  return (
+    <MovieDetailCard movie={movie} />
+  );
 }
