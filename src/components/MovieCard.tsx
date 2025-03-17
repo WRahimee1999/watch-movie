@@ -21,7 +21,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
   };
   return (
     <div className="movie-card">
-      <Link to={`movie-details/${movie.id}`}>
+      <Link to={`/movie-details/${movie.id}`}>
         <div className="movie-poster">
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
