@@ -23,6 +23,12 @@ export const getMovieDetails = async (movie_id : string) => {
   return data;
 }
 
+export const getTvShows = async (page: number = 1) => {
+  const response = await fetch(`${BASE_URL}/discover/tv?page=${page}&sort_by=popularity.desc&api_key=${API_KEY}`);
+  const data = await response.json();
+  return data.results;
+}
+
 // export const getPopularMovie = () => {
 //     return fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`)
 //         .then((response) => response.json()

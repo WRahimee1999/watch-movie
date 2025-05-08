@@ -89,7 +89,8 @@ const MovieDetailCard: React.FC<MovieCardProps> = ({ movie }) => {
             href={`https://www.imdb.com/title/${movie?.imdb_id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded transition"
+            style={{ padding: "10px" }}
+            className="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-4 rounded transition"
           >
             🎬 View on IMDb
           </a>
