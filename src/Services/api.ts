@@ -17,8 +17,22 @@ export const searchMovies = async (query: string) => {
   return data.results;
 };
 
+export const searchTvShows = async (query: string) => {
+  const response = await fetch(
+    `${BASE_URL}/search/tv?api_key=${API_KEY}&query=${encodeURIComponent(query)}`
+  )
+  const data = await response.json();
+  return data.results;
+}
+
 export const getMovieDetails = async (movie_id : string) => {
   const response = await fetch(`${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}`);
+  const data = await response.json();
+  return data;
+}
+
+export const getTvShowDetails = async (tv_id : string) => {
+  const response = await fetch(`${BASE_URL}/tv/${tv_id}?api_key=${API_KEY}`);
   const data = await response.json();
   return data;
 }
