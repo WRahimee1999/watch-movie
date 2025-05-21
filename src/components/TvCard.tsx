@@ -1,10 +1,10 @@
 import "../css/MovieCard.css";
-import { useMovieContext } from "../contexts/MovieContext";
 import { MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import { MovieCardProps } from "./MovieCard";
+import { useTvShowContext } from "../contexts/TvShowContext";
 export default function TvCard({ movie }: MovieCardProps) {
-  const { isFavorite, addFavorites, removeFavorites } = useMovieContext();
+  const { isFavorite, addFavorites, removeFavorites } = useTvShowContext();
   const favorite = isFavorite(movie.id);
   const onFovorite = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

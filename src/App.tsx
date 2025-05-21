@@ -6,20 +6,29 @@ import NavBar from "./components/NavBar";
 import { MovieProvider } from "./contexts/MovieContext";
 import { Routes, Route } from "react-router-dom";
 import TvShows from "./Pages/TvShows";
+import { TvShowProvider } from "./contexts/TvShowContext";
 
 function App() {
   return (
     <MovieProvider>
-      <NavBar /> 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorite-movies" element={<Favorites />} />
-          <Route path="/tv-shows" element={<TvShows />} />
-          <Route path="/movie-details/:id" element={<MovieDetails type="movie" />}  />
-          <Route path="/tvShow-details/:id" element={<MovieDetails type="tv" />} />
-        </Routes>
-      </main>
+      <TvShowProvider>
+        <NavBar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/favorite-movies" element={<Favorites />} />
+            <Route path="/tv-shows" element={<TvShows />} />
+            <Route
+              path="/movie-details/:id"
+              element={<MovieDetails type="movie" />}
+            />
+            <Route
+              path="/tvShow-details/:id"
+              element={<MovieDetails type="tv" />}
+            />
+          </Routes>
+        </main>
+      </TvShowProvider>
     </MovieProvider>
   );
 }
