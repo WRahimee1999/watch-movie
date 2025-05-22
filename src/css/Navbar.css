@@ -27,6 +27,20 @@
   .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+
+  .brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between text and logo */
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.brand-link img {
+  display: block;
+}
   
   @media (max-width: 768px) {
     .navbar {

@@ -1,0 +1,74 @@
+.details-skeleton {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+}
+
+.poster {
+  width: 300px;
+  height: 450px;
+  border-radius: 8px;
+  background-color: #333;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.title {
+  height: 32px;
+  width: 70%;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.sub-info {
+  height: 20px;
+  width: 40%;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.genre {
+  height: 20px;
+  width: 50%;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.section {
+  height: 16px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+/* Shimmer effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}

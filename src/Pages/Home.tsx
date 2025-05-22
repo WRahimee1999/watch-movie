@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import MovieCard, { Movie } from "../components/MovieCard";
 import { getPopularMovies, searchMovies } from "../Services/api";
 import { FaSearch } from "react-icons/fa";
-import SkeletonLoader from "../components/SkeletonLoader";
+import SkeletonLoader from "../components/Loader/SkeletonLoader";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [movies, setMovies] = useState<Movie[]>([]);

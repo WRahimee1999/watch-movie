@@ -4,6 +4,7 @@ import "../css/Favorites.css";
 import { Movie } from "../components/MovieCard";
 import { useTvShowContext } from "../contexts/TvShowContext";
 import TvCard from "../components/TvCard";
+import NoFavorites from "../components/NoFovorites";
 
 export default function Favorites() {
   const { favorites } = useMovieContext();
@@ -25,8 +26,6 @@ export default function Favorites() {
       </div>
     </div>
   ) : (
-    <div className="favorites-empty">
-      <h2>No Favorite Movies Or TvShows Yet!</h2>
-    </div>
+    <NoFavorites />
   );
 }

@@ -5,6 +5,7 @@ import MovieDetailCard from "../components/DetailCard";
 import "../css/Details.css";
 import { Movie } from "../components/DetailCard";
 import TVShowDetailCard, { TVShow } from "../components/TvShowDetailCard";
+import DetailsSkeleton from "../components/Loader/DetailsSkeleton";
 
 interface Props {
   type: "movie" | "tv";
@@ -39,7 +40,7 @@ export default function MovieDetails({ type }: Props) {
   }, [id]);
 
   if (loading) {
-    return <div className="loader">Loading...</div>;
+    return <div className="loader"><DetailsSkeleton /></div>;
   }
 
   if (error) {

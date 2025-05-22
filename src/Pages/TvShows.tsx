@@ -3,9 +3,9 @@ import { getTvShows, searchTvShows } from "../Services/api";
 import { Movie } from "../components/MovieCard";
 import { FaSearch } from "react-icons/fa";
 import TvCard from "../components/TvCard";
-import SkeletonLoader from "../components/SkeletonLoader";
+import SkeletonLoader from "../components/Loader/SkeletonLoader";
 export default function TvShows() {
-    const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [tvShows, setTvShows] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,23 +23,23 @@ export default function TvShows() {
     loadTvShows();
   }, []);
 
-    const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      if (!searchQuery.trim()) return;
-      if (loading) return;
-      setLoading(true);
-  
-      try {
-        const searchResult = await searchTvShows(searchQuery);
-        setTvShows(searchResult);
-        setError(null);
-      } catch (err) {
-        console.log(err);
-        setError("failed to search for movies");
-      } finally {
-        setLoading(false);
-      }
-    };
+  const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      const searchResult = await searchTvShows(searchQuery);
+      setTvShows(searchResult);
+      setError(null);
+    } catch (err) {
+      console.log(err);
+      setError("failed to search for movies");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="home">
       <form className="search-form" onSubmit={handleSearch}>
