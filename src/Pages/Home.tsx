@@ -1,7 +1,10 @@
 import "../css/Home.css";
+import "../css/loaderSkeleton.css";
 import React, { useEffect, useState } from "react";
 import MovieCard, { Movie } from "../components/MovieCard";
 import { getPopularMovies, searchMovies } from "../Services/api";
+import { FaSearch } from "react-icons/fa";
+import SkeletonLoader from "../components/SkeletonLoader";
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -50,14 +53,14 @@ export default function Home() {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button type="submit" className="search-button">
-          Search
+          <FaSearch />
         </button>
       </form>
 
       {error && <div className="error-message">{error}</div>}
 
       {loading ? (
-        <div className="loading">Loading...</div>
+        <SkeletonLoader />
       ) : (
         <div className="movies-grid">
           {movies.map(
