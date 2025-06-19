@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "watch-movies-af",
     "public": "dist",
     "ignore": [
       "firebase.json",
