@@ -5,7 +5,7 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-900 to-purple-900 shadow-lg sticky rounded-lg top-0 z-50">
+    <nav className="bg-gradient-to-r from-indigo-900  shadow-lg sticky rounded-lg top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
@@ -15,7 +15,7 @@ export default function NavBar() {
               className="flex items-center space-x-2 text-white hover:text-purple-200 transition duration-300"
             >
               <svg
-                className="h-8 w-8"
+                className="h-8 w-8 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -27,7 +27,7 @@ export default function NavBar() {
                   d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"
                 />
               </svg>
-              <span className="text-2xl font-bold">Watch Movie</span>
+              <span className="text-2xl font-bold text-white">Watch Movie</span>
             </Link>
           </div>
 
@@ -36,7 +36,7 @@ export default function NavBar() {
             <div className="flex items-baseline gap-3">
               <Link
                 to="/"
-                className="text-white hover:underline rounded-md text-sm font-medium transition duration-300 flex items-center space-x-1"
+                className="text-white hover:underline rounded-md text-md font-medium transition duration-300 flex items-center space-x-1"
               >
                 <svg
                   className="h-5 w-5"
@@ -55,7 +55,7 @@ export default function NavBar() {
               </Link>
               <Link
                 to="/tv-shows"
-                className="text-white rounded-md text-sm font-medium transition duration-300 flex items-center space-x-1"
+                className="text-white rounded-md text-md font-medium transition duration-300 flex items-center space-x-1"
               >
                 <svg
                   className="h-5 w-5"
@@ -74,7 +74,7 @@ export default function NavBar() {
               </Link>
               <Link
                 to="/favorite-movies"
-                className="text-white rounded-md text-sm font-medium transition duration-300 flex items-center space-x-1"
+                className="text-white rounded-md text-md font-medium transition duration-300 flex items-center space-x-1"
               >
                 <svg
                   className="h-5 w-5"

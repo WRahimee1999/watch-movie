@@ -7,6 +7,7 @@ import { MovieProvider } from "./contexts/MovieContext";
 import { Routes, Route } from "react-router-dom";
 import TvShows from "./Pages/TvShows";
 import { TvShowProvider } from "./contexts/TvShowContext";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               path="/tvShow-details/:id"
               element={<MovieDetails type="tv" />}
             />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
       </TvShowProvider>
